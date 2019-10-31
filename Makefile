@@ -1,7 +1,6 @@
-
 QUOTE_FILES:=$(wildcard quotes/*)
 
-all: build
+all: deb
 
 build bin/fortune-cif.deb: $(QUOTE_FILES)
 	docker build -t fortune-cif .
@@ -17,4 +16,9 @@ deb: bin/fortune-cif.deb
 
 install: bin/fortune-cif.deb
 	dpkg -i bin/fortune-cif.deb
+.PHONY: install
+
+clean:
+	rm -rf bin
+.PHONY: clean
 
