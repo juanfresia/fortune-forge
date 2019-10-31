@@ -1,8 +1,8 @@
-Package: fortune-cif
+Package: fortune-forge
 Version: 1.0
 Section: games
 Priority: optional
 Architecture: amd64
-Maintainer: CIF <cif@medallia.com>
-Description: Fortunes and quotes from the CIF team.
+Maintainer: Juan Manuel Fresia <juanmanuelfresia@gmail.com>
+Description: Fortunes and quotes by you.
 Depends: fortune-mod

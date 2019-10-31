@@ -1,9 +1,9 @@
 #! /bin/bash
 
-FORTUNE_DIR="fortune-cif/usr/share/games/fortunes"
+FORTUNE_DIR="fortune-forge/usr/share/games/fortunes"
 QUOTES_DIR="quotes"
 
-mv build fortune-cif
+mv build fortune-forge
 mkdir -p "${FORTUNE_DIR}"
 
 for file in $(ls quotes); do
@@ -11,4 +11,4 @@ for file in $(ls quotes); do
     strfile "${FORTUNE_DIR}/${file}"
 done
 
-dpkg -b fortune-cif
+dpkg -b fortune-forge
