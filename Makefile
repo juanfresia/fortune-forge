@@ -1,7 +1,9 @@
 
+QUOTE_FILES:=$(wildcard quotes/*)
+
 all: build
 
-build:
+build bin/fortune-cif.deb: $(QUOTE_FILES)
 	docker build -t fortune-cif .
 	@mkdir -p bin
 	docker run --rm -it -v $(shell pwd)/bin:/mnt fortune-cif cp fortune-cif.deb /mnt
@@ -11,7 +13,7 @@ run:
 	docker run --rm -it fortune-cif /bin/bash
 .PHONY: run
 
-bin/fortune-cif.deb: build
+deb: bin/fortune-cif.deb
 
 install: bin/fortune-cif.deb
 	dpkg -i bin/fortune-cif.deb
