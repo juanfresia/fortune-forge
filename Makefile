@@ -1,11 +1,18 @@
 
+all: build
 
 build:
-	sudo docker build -t fortune-cif .
+	docker build -t fortune-cif .
 	@mkdir -p bin
-	sudo docker run --rm -it -v $(shell pwd)/bin:/mnt fortune-cif cp fortune-cif.deb /mnt
+	docker run --rm -it -v $(shell pwd)/bin:/mnt fortune-cif cp fortune-cif.deb /mnt
 .PHONY: build
 
 run:
-	sudo docker run --rm -it fortune-cif /bin/bash
+	docker run --rm -it fortune-cif /bin/bash
 .PHONY: run
+
+bin/fortune-cif.deb: build
+
+install: bin/fortune-cif.deb
+	dpkg -i bin/fortune-cif.deb
+

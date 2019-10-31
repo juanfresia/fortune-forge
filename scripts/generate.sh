@@ -1,6 +1,6 @@
 #! /bin/bash
 
-FORTUNE_DIR="fortune-cif/usr/share/games/fortunes/"
+FORTUNE_DIR="fortune-cif/usr/share/games/fortunes"
 QUOTES_DIR="quotes"
 
 mv build fortune-cif
