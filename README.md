@@ -24,7 +24,7 @@ accessible via the `fortuen <db>` command.
 Each of the files may contain any number of fortune strings, separated by lines
 containing __only one % character__.
 
-This is an example of a cookie file:
+This is an example of a cookie file (named `example`):
 ```
 %
 This is the first cookie.
@@ -34,12 +34,13 @@ And is also a multi-line cookie.
 %
 ```
 
+After the build you can access the fortunes in there simply by calling `fortune
+example`.
+
 ## Generating the .deb
 
 To package your cookies into a `.deb` simply run `make deb`. It will spin a
 docker container, bake your cookies and leave them under
-`bin/fortune-forge.deb`.
-
 
 ### Changing the package data
 
