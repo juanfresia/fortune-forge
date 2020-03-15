@@ -40,7 +40,7 @@ example`.
 ## Generating the .deb
 
 To package your cookies into a `.deb` simply run `make deb`. It will spin a
-docker container, bake your cookies and leave them under
+docker container, bake your cookies and leave them under `bin` directory.
 
 ### Changing the package data
 
